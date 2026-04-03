@@ -1,3 +1,291 @@
+
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    font-style: italic;
+    font-size: 2rem;
+    margin-left: 20px;
+}
+#navbar{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: rgba(0,0,0,0.5);
+    color: yellow;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+}
+ul{
+    list-style: none;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+}
+ul li a i{
+    font-size: 20px;
+    color: rgb(133, 133, 77);
+    margin-right: 5px;
+}
+ul li a{
+    text-decoration: none;
+    color: rgb(78, 78, 61);
+    font-weight: bold;
+}
+ul li{
+    border-top: 1px solid white;
+    font-size: 1.5rem;
+    border-radius: 5px;     
+    padding: 10px;
+    margin: 5px;
+
+
+}
+.container{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.publication{
+    position: relative;
+    height: 75vh;
+    margin-top: 100px;
+    overflow: hidden;
+}
+.pub{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(202, 230, 220);
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.pub.active{
+    opacity: 1;
+}
+.swiper-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+#prevBtn{
+    left: 10px;
+}
+#nextBtn{
+    right: 10px;
+}
+.pub div button{
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 200px;
+    margin-top: 20px;
+}
+.boutique{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
     
 }
+/* pour Tablette */
+#tablet{
+    width: 330px;
+    height: 300px;
+    display: flex;
+    margin: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0; 
+    min-width: 330px;  
+    min-height: 300px; 
+    background-color: rgb(104, 102, 100);
+
+}
+#tablet:hover .produits{
+    height: 280px;
+    overflow: hidden;
+    transition: all 2s ease;
+}
+#tablet:hover #img{
+    width: 180px;
+    height: 200px;
+    margin-left: 0;
+    transform: rotatey(60deg);
+    transition: ease 0.5s;
+}
+#tablet:hover .ctact{
+    visibility: visible;
+    width: 50%;
+    height: 300px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(177, 156, 126);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: 0s ease;
+}
+#tablet:hover .ctact img{
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+    cursor: pointer;
+}
+/* .................... */
+
+/* pour Phone */
+.slider-container{
+    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+#telephone{
+    width: 60%;
+    height: 590px;
+    align-items: center;
+}
+#tablette{
+    width: 60%;
+    height: 380px;
+}
+#ordinateur{
+    height: 380px;
+}
+.slider-container::-webkit-scrollbar {
+    display: none; 
+}
+.slider-item{
+    width: 330px;
+    height: 420px;
+    display: flex;
+    margin: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0; 
+    min-width: 300px;  
+    min-height: 340px; 
+       background-color: rgb(104, 102, 100);
+
+    
+}
+span{
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+    background-color: rgb(197, 197, 105);
+}
+.produits h3{
+    width: 100%;
+    margin: 10px;
+    color: yellow;
+}
+.produits h3 i{
+    margin-left: 140px;
+}
+.produits img{
+    margin-left: 50px;
+}
+.produits p{
+    margin-left: 20px;
+    margin-top: 0;
+}
+.slider-item:hover .produits{
+    height: 280px;
+    overflow: hidden;
+    transition:  ease 0.5s;
+}
+.slider-item:hover #img{
+    width: 200px;
+    height: 250px;
+    transition:  ease 0.5s;
+}
+.slider-item:hover .ctact{
+   
+    visibility: visible;
+    width: 100%;
+    height: 140px;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: aqua;
+    position: absolute;
+    bottom: 0;
+    transition: ease 1.5s;
+}
+.slider-item:hover .ctact img{
+    width: 65px;
+    height: 65px;
+    margin: 8px;
+    cursor: pointer;
+}
+/* ************************************** */
+
+/* ordinateur*/
+.ordinateur{
+    width: 400px;
+    height: 320px;
+    display: flex;
+    margin: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0; 
+    min-width: 400px;  
+    min-height: 320px; 
+    background-color: rgb(104, 102, 100);
+}
+
+/* **************************************** */
+
+.nouveaute-produits{
+    width: 40%;
+    height: 790px;
+    background-color: aqua;
+    position: absolute;
+    right: 0;
+    margin-top: 98px;
+}
+.contact{
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+    background-color: blanchedalmond;
+}
+.ctact{
+    visibility: hidden;
+}
+
