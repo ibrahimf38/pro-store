@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+     
 
     function nextPub() {
         currentIndex = (currentIndex + 1) % pubs.length;

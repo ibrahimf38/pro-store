@@ -92,9 +92,7 @@ ul li{
 #prevBtn{
     left: 10px;
 }
-#nextBtn{
-    right: 10px;
-}
+
 .pub div button{
     padding: 20px;
     font-size: 1.5rem;
@@ -273,11 +271,11 @@ span{
 
 .nouveaute-produits{
     width: 40%;
-    height: 790px;
-    background-color: aqua;
+    height: 800px;
     position: absolute;
     right: 0;
-    margin-top: 98px;
+    margin-top: 110px;
+    
 }
 .contact{
     width: 100%;
@@ -288,4 +286,3 @@ span{
 .ctact{
     visibility: hidden;
 }
-
