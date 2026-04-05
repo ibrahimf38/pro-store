@@ -1,186 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro-Store</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProStore - Boutique en ligne</title>
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="navbar">
-        <div>
-            <img src="./photos/logo.png" alt=""  height="100px">
-        </div>
-        <ul>
-            <li><a href="">Accueil<i class="fa-solid fa-house"></i></a></li>
-            <li><a href="#boutique">Boutique <i class="fa-solid fa-cart-plus"></i></a></li>
-            <li><a href="#contact">Contact <i class="fa-solid fa-phone fa-rotate-270"></i></a></li>
-        </ul>
-    </header>
-    <main>
-        <div class="publication">
-        <div class="pub">
-            <div>
-                <p>Lorem, ipsum dolor sit amet<br> consectetur adipisicing.</p>
-                <a href="#boutique"><img src="./photos2/Property 1=Default.png" alt=""></a>
-            </div>
-            <div style="height: 400; width: 400;">
-                <img src="./Photos2/image 11.png" alt="" width="300" height="300">
-            </div>
-        </div>
-        <div class="pub" style="background-color: blueviolet;">
-            <div>
-                <p>Lorem ipsum dolor, sit amet <br>consectetur adipisicing elit.</p>
-                <a href="#boutique"><img src="./photos2/Property 1=Default.png" alt=""></a>
-            </div>
-            <div>
-                <img src="./Photos2/image 18.png" alt="" width="300" height="300">
-            </div>
-        </div>
-        <div class="pub" style="background-color: aquamarine;">
-            <div>
-                <p>Lorem, ipsum dolor sit amet consectetur<br> adipisicing elit. Sed dignissimos </p>
-                <a href="#boutique"><img src="./photos2/Property 1=Default.png" alt=""></a>
-            </div>
-            <div>
-                <img src="./Photos/img.jpg" alt="" width="300" height="300">
-            </div>
-        </div>
-        <div class="pub" style="background-color: aqua;">
-            <div>
-                <p>Lorem ipsum dolor sit.</p>
-                <a href="#boutique"><img src="./photos2/Property 1=Default.png" alt=""></a>
-            </div>
-            <div>
-                <img src="./Photos/img.jpg" alt="" width="300" height="300">
-            </div>
-        </div>
-        <div class="pub" style="background-color: antiquewhite;">
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Tempora!</p>
-                <a href="#boutique"><img src="./photos2/Property 1=Default.png" alt=""></a>
-            </div>
-            <div>
-                <img src="./Photos/img.jpg" alt="" width="300" height="300">
-            </div>
-        </div>
-        </div>
-        <button id="prevBtn" class="swiper-btn">&lt;</button>
-        <button id="nextBtn" class="swiper-btn">&gt;</button>
+  <div class="page">
+    <!-- Navigation -->
+    <nav class="nav">
+      <img class="logo" src="img/logo.png" alt="ProStore Logo">
+      <div class="nav-buttons">
+        <button class="nav-btn nav-btn--active">
+          <span class="nav-btn__text">Acceuil</span>
+          <img class="nav-btn__icon" src="img/home.png" alt="Accueil">
+        </button>
+        <button class="nav-btn">
+          <span class="nav-btn__text">Boutique</span>
+          <img class="nav-btn__icon" src="img/add shopping cart.png" alt="Boutique">
+        </button>
+        <button class="nav-btn">
+          <span class="nav-btn__text">Contact</span>
+          <img class="nav-btn__icon" src="img/call.png" alt="Contact">
+        </button>
+      </div>
+    </nav>
 
-    <!-- Boutique -->
+    <!-- Section Accueil (Carrousel) -->
+    <section class="hero">
+      <div class="hero-carousel">
+        <div class="hero-slide">
+          <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
+            <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
+            <button class="cart-btn">
+              <img src="img/add shopping cart 2.png" alt="Ajouter au panier">
+            </button>
+          </div>
+          <img class="hero-image" src="img/image 5.png" alt="Produit">
+        </div>
+        <!-- Autres slides identiques -->
+      </div>
+    </section>
 
-    <div class="container">
-        <h2 style="padding: 10px;" id="boutique">Boutique</h2>
-            <div class="boutique" >
-                <h2>Decouvrez Nos disponibiliter</h2>
-     <!-- ************************************************            -->
-                  <!-- Nouveaux -->
+    <!-- Section Boutique -->
+    <section class="shop">
+      <h1 class="shop-title">Boutique</h1>
+      
+      <!-- Version mobile/iphone -->
+      <div class="shop-section shop-section--phone">
+        <h3 class="shop-section__title">Decouvrez nos disponibilité</h3>
+        <div class="product-scroll">
+          <!-- Produit 1 -->
+          <div class="product-card">
+            <span class="product-badge">Authenthique</span>
+            <img class="product-card__img" src="img/11.png" alt="Produit">
+            <img class="product-fav" src="img/ellipse 6.png" alt="Favoris">
+            <h4 class="product-title">Lorem Ipsum is simply</h4>
+            <p class="product-subtitle">Lorem Ipsum</p>
+            <p class="product-price"><strong>600 mil</strong> <span>Fcfa</span></p>
+          </div>
+          <!-- Plus de produits... -->
+        </div>
+      </div>
 
-            <div class="nouveaute-produits">
-                <div class="nouveaux">
-                     <div class="arrivage">
-                        <div>
-                            <img src="./photos2/image 20.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="accessoire">
-                    <h2>Nouvelle Arivages <img src="./photos2/New.png" alt=""></h2>
-                    <div >
-                        <div class="arriv">
-                            <img src="./photos2/image 20.png" alt="">
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-
-    <!-- *********************************************           -->
-      <!-- Telephone -->
-                <div class="slider-container" id="telephone">
-                    <div class="slider-item" id="tel">
-                        <div class="produits">
-                            <h3><span>Authenthique</span> <i class="fa-regular fa-heart"></i></h3>
-                             <img src="./photos2/12.png" alt="" width="220px" height="330" id="img">
-                            <p>
-                            Description du produit<br>
-                            Prix : 100€
-                            </p>
-                        </div>
-                       
-                        <div class="ctact">
-                            <img src="./photos2/Group 4.png" alt="" >
-                            <img src="./photos2/image 10.png" alt="" >
-                            <img src="./photos2/image 11.png" alt="" >
-                            <img src="./photos2/Rectangle 5.png" alt="" >
-                        </div>
-                    </div>
-                    
-                </div>
-    <!-- *********************************************           -->
-        <!-- Tablette -->
-                <div class="slider-container" id="tablette">
-                    <div id="tablet">
-                        <div class="produits">
-                            <h3>Authenthique <i class="fa-regular fa-heart"></i></h3>
-                             <img src="./photos2/11.png" alt="" width="200px" height="200" id="img">
-                            <p>
-                            Description du produit<br>
-                            Prix : 100€
-                            </p>
-                        </div>
-                       
-                        <div class="ctact">
-                            <img src="./photos2/Group 4.png" alt="" >
-                            <img src="./photos2/image 10.png" alt="" >
-                            <img src="./photos2/image 11.png" alt="" >
-                            <img src="./photos2/Rectangle 5.png" alt="" >
-                        </div>
-                    </div>
-                    
-                </div>
-    <!-- *********************************************           -->
-        <!-- Ordinateur -->            
-                <div class="slider-container" id="ordinateur">
-                    <div class="ordinateur">
-                        <div class="produits">
-                            <h3>Authenthique <i class="fa-regular fa-heart"></i></h3>
-                             <img src="./photos2/image 17.png" alt="" width="200px" height="200" id="img">
-                            <p>
-                            Description du produit<br>
-                            Prix : 100€
-                            </p>
-                        </div>
-                       
-                        <div class="ctact">
-                            <img src="./photos2/Group 4.png" alt="" >
-                            <img src="./photos2/image 10.png" alt="" >
-                            <img src="./photos2/image 11.png" alt="" >
-                            <img src="./photos2/Rectangle 5.png" alt="" >
-                        </div>
-                    </div>
-                    
-                </div>
-    <!-- *********************************************           -->
+      <!-- Version tablette -->
+      <div class="shop-section shop-section--tablet">
+        <div class="product-scroll">
+            <div class="product-card product-card--small">
+            <span class="product-badge">Authenthique</span>
+            <img class="product-card__img" src="img/image 12.png" alt="Produit">
+            <img class="product-fav" src="img/ellipse 6.png" alt="Favoris">
+            <h4 class="product-title">Lorem Ipsum is simply</h4>
+            <p class="product-subtitle">Lorem Ipsum</p>
+            <p class="product-price"><strong>320 mil</strong> <span>Fcfa</span></p>
+          </div>
           
-            <div class="contact">
-                <h2 id="contact">Contacte Nous</h2>
-            </div>
-    </div>
-    </main>
+          <!-- Plus de produits... -->
+        </div>
+      </div>
 
-    <footer style="display:flex; 
-    justify-content: center; 
-    align-items: center;
-    background-color: rgb(77, 67, 67);
-    padding: 30px;
-    width: 100%;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;">
-        <img src="./Photos/logo.png" alt="">
+      <!-- Version desktop -->
+      <div class="shop-section shop-section--desktop">
+        <div class="product-scroll">
+          <div class="product-card product-card--large">
+            <span class="product-badge">Authenthique</span>
+            <img class="product-card__img" src="img/image 17.png" alt="Produit">
+            <img class="product-fav" src="img/ellipse 6.png" alt="Favoris">
+            <h4 class="product-title">Lorem Ipsum is simply</h4>
+            <p class="product-subtitle">Lorem Ipsum</p>
+            <p class="product-price"><strong>950 mil</strong> <span>Fcfa</span></p>
+          </div>
+          <!-- Plus de produits... -->
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-btn sidebar-btn--view">
+          <span>Voir plus</span>
+          <img src="img/Up 2.png" alt="Voir plus">
+        </div>
+        <div class="sidebar-btn sidebar-btn--new">
+          <span>Nouvelle arrivage</span>
+          <img src="img/New.png" alt="Nouveau">
+        </div>
+        <div class="sidebar-gallery">
+          <!-- Galerie d'images -->
+        </div>
+        <div class="sidebar-nav">
+          <button class="sidebar-nav__btn">
+            <img src="img/Chevron Down.png" alt="Précédent">
+          </button>
+          <button class="sidebar-nav__btn">
+            <img src="img/Chevron Down 2.png" alt="Suivant">
+          </button>
+        </div>
+        <img class="sidebar-star" src="img/star.png" alt="Star">
+      </aside>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact">
+      <h2 class="contact-title">Contactez nous</h2>
+      <img class="contact-map" src="img/localisationimg.png" alt="Localisation">
+      <div class="social-icons">
+        <a href="#" class="social-icon"><img src="img/WhaIcon.png" alt="WhatsApp"></a>
+        <a href="#" class="social-icon"><img src="img/IstaIcon.png" alt="Instagram"></a>
+        <a href="#" class="social-icon"><img src="img/TikIcon.png" alt="TikTok"></a>
+        <a href="#" class="social-icon"><img src="img/TeleIcon.png" alt="Telegram"></a>
+        <a href="#" class="social-icon"><img src="img/EmaIcon.png" alt="Email"></a>
+        <a href="#" class="social-icon"><img src="img/ConIcon.png" alt="Contact"></a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <img class="footer-logo" src="img/image 4.png" alt="ProStore">
+      <p class="footer-email">@prostore.com/prostore.ml/tiktokprostore.com</p>
     </footer>
+  </div>
 </body>
 </html>
