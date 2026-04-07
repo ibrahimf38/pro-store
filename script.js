@@ -1,32 +1,77 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const pubs = document.querySelectorAll('.pub');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+(function () {
+    const carousel = document.getElementById('heroCarousel');
+    const slides = Array.from(document.querySelectorAll('.hero-slide'));
+    const slideCount = slides.length;
     let currentIndex = 0;
+    let autoScrollInterval;
 
-    function showPub(index) {
-        pubs.forEach((pub, i) => {
-            if (i === index) {
-                pub.classList.add('active');
-            } else {
-                pub.classList.remove('active');
-            }
+    if (!carousel || slideCount === 0) return;
+
+    carousel.style.scrollBehavior = 'smooth';
+
+    function goToSlide(index) {
+        if (index >= slideCount) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = slideCount - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        // Correction : scroll uniquement dans le carrousel, pas dans toute la page
+        const targetSlide = slides[currentIndex];
+        const scrollAmount = targetSlide.offsetLeft - carousel.offsetLeft;
+
+        carousel.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
         });
     }
-     
 
-    function nextPub() {
-        currentIndex = (currentIndex + 1) % pubs.length;
-        showPub(currentIndex);
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
     }
 
-    function prevPub() {
-        currentIndex = (currentIndex - 1 + pubs.length) % pubs.length;
-        showPub(currentIndex);
+    function startAutoPlay() {
+        if (autoScrollInterval) clearInterval(autoScrollInterval);
+        autoScrollInterval = setInterval(nextSlide, 1000); // Changé à 3 secondes
     }
 
-    showPub(currentIndex);
-    setInterval(nextPub, 2000);
-    prevBtn.addEventListener('click', prevPub);
-    nextBtn.addEventListener('click', nextPub);
-});
+    function stopAutoPlay() {
+        if (autoScrollInterval) {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = null;
+        }
+    }
+
+    let scrollTimeout;
+    carousel.addEventListener('scroll', function () {
+        stopAutoPlay();
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            let closestIndex = 0;
+            let minDistance = Infinity;
+
+            slides.forEach((slide, idx) => {
+                const rect = slide.getBoundingClientRect();
+                const carouselRect = carousel.getBoundingClientRect();
+                const distance = Math.abs(rect.left - carouselRect.left);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIndex = idx;
+                }
+            });
+
+            currentIndex = closestIndex;
+            startAutoPlay();
+        }, 150);
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+
+    startAutoPlay();
+
+    console.log('Carrousel démarré - défilement corrigé');
+})();

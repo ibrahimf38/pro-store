@@ -43,6 +43,9 @@
 body {
   font-family: 'Kawaii Bubble', Helvetica, sans-serif;
 }
+.product-subtitle-com{
+ font-family: 'Inknut Antiqua-Regular', Helvetica;
+}
 
 .page {
   background: #fff;
@@ -94,6 +97,8 @@ body {
 
 .nav-btn:hover {
   opacity: 0.8;
+  background:var(--gold) ;
+  box-shadow: #C7BB94;
 }
 
 .nav-btn__text {
@@ -101,6 +106,9 @@ body {
   font-weight: 700;
   color: var(--gold);
   font-size: 16px;
+}
+.nav-btn__text:hover{
+  color: #B99031;
 }
 
 .nav-btn__icon {
@@ -111,17 +119,23 @@ body {
 /* Hero Section */
 .hero {
   margin-top: 167px;
-  width:1515px;
+  width:1510px;
+  position: relative;
   
 }
 
 .hero-carousel {
   display: flex;
   gap: 40px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-y pinch-zoom;
 }
-
+.hero-carousel::-webkit-scrollbar {
+  display: none;
+}
 .hero-slide {
   min-width: 1515px;
   height: 609px;
@@ -152,15 +166,29 @@ body {
   margin-top: 80px;
   width: 604px;
 }
+.slide-1{
+ background-color: #E6ECF8;
+}
+.slide-2{
+  background-color: #C7BB94;
+}
+.slide-3{
+  background-color: #CBB7E6;
+}
+.slide-4{
+  background-color: #C8E8E0;
+}
 
 .cart-btn {
+  position: absolute;
   width: 224px;
   height: 69px;
   background: #fff;
   border: 6px solid transparent;
   border-image: var(--border-gold) 1;
   box-shadow: 5px 1px 5px #755d2a;
-  margin-top: 80px;
+  margin-top: 380px;
+  margin-left: 90px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -283,6 +311,43 @@ body {
 .product-price span {
   color: #000000cc;
 }
+/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
+.product-description {
+  position: absolute;
+  bottom: 38px;
+  left: 22px;
+  right: 22px;
+  font-family: 'Inknut Antiqua-Regular', Helvetica;
+  font-size: 14px;
+  color: #000000b2;
+  line-height: 1.4;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+.product-card:hover .product-description {
+  opacity: 1;
+  visibility: visible;
+}
+.product-card:hover .product-price {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.product-card:hover .product-price {
+  bottom: 90px; /* Remonte le prix pour laisser de la place */
+}
+
+.product-card:hover .product-description {
+  bottom: 38px;
+}
+/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
 
 /* Scroll Containers */
 .shop-section {
