@@ -311,44 +311,6 @@ body {
 .product-price span {
   color: #000000cc;
 }
-/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
-.product-description {
-  position: absolute;
-  bottom: 38px;
-  left: 22px;
-  right: 22px;
-  font-family: 'Inknut Antiqua-Regular', Helvetica;
-  font-size: 14px;
-  color: #000000b2;
-  line-height: 1.4;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 3;
-}
-
-.product-card:hover .product-description {
-  opacity: 1;
-  visibility: visible;
-}
-.product-card:hover .product-price {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.product-card:hover .product-price {
-  bottom: 90px; /* Remonte le prix pour laisser de la place */
-}
-
-.product-card:hover .product-description {
-  bottom: 38px;
-}
-/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
-
 /* Scroll Containers */
 .shop-section {
   background: #b990311a;
@@ -513,11 +475,13 @@ body {
 .contact-map {
   position: absolute;
   top: 75px;
-  left: 1px;
+  left: 30px;
   width: 1383px;
   height: 348px;
   object-fit: cover;
 }
+
+
 
 .social-icons {
   position: absolute;
@@ -542,6 +506,7 @@ body {
   width: 60px;
   height: auto;
 }
+
 
 /* Footer */
 .footer {
