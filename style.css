@@ -42,13 +42,16 @@
 
 body {
   font-family: 'Kawaii Bubble', Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .page {
   background: #fff;
   border-top: 8px solid #9b85408f;
-  min-width: 1515px;
+  width: 100%;
+  max-width: 1515px;
   min-height: 3284px;
+  margin: 0 auto;
 }
 
 /* Navigation */
@@ -56,7 +59,8 @@ body {
   position: fixed;
   top: 9px;
   left: 0;
-  width: 1515px;
+  width: 100%;
+  max-width: 1515px;
   height: 146px;
   background: var(--dark-bg);
   border-radius: 30px 30px 0 0;
@@ -89,11 +93,21 @@ body {
   border-radius: 30px;
   padding: 8px 15px;
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
   opacity: 0.8;
+  box-shadow: 0px 4px 4px #b99031;
+  background-color: #c2b088;
+}
+
+.nav-btn:hover .nav-btn__text {
+  text-shadow: 0px 0px 5px #b99031;
+  color: #9e720d;
+}
+.nav-btn:hover .nav-btn__icon {
+  filter: invert(27%) sepia(96%) saturate(748%) hue-rotate(15deg) brightness(95%) contrast(101%);
 }
 
 .nav-btn__text {
@@ -111,8 +125,10 @@ body {
 /* Hero Section */
 .hero {
   margin-top: 167px;
-  width:1515px;
-  
+  width: 100%;
+  max-width: 1515px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-carousel {
@@ -123,7 +139,7 @@ body {
 }
 
 .hero-slide {
-  min-width: 1515px;
+  min-width: 100%;
   height: 609px;
   background: var(--gray-bg);
   position: relative;
@@ -183,9 +199,10 @@ body {
 /* Shop Section */
 .shop {
   position: relative;
-  width: 1443px;
+  width: 100%;
+  max-width: 1443px;
   min-height: 1633px;
-  margin-top: 43px;
+  margin: 43px auto 0;
 }
 
 .shop-title {
@@ -321,7 +338,7 @@ body {
   position: absolute;
   top: 1159px;
   left: 1px;
-  width: 1515px;
+  width: 100%;
   height: 474px;
   display: flex;
   gap: 20px;
@@ -480,7 +497,7 @@ body {
 
 /* Footer */
 .footer {
-  width: 1515px;
+  width: 100%;
   height: 208px;
   margin-top: 48px;
   background: var(--dark-bg);
@@ -504,6 +521,8 @@ body {
   color: #b2862d;
   margin-top: 67px;
 }
+
+
 
 /* Responsive Breakpoints */
 @media (max-width: 1450px) {
