@@ -1,19 +1,19 @@
 
-function scrollToBottom(){
+function scrollToBottom() {
     window.scrollTo({
         top: document.body.scrollHeight,
         behavior: "smooth"
     })
 }
-function goToSelection(){
-   document.getElementById("center").scrollIntoView({
-     behavior: "smooth"
-   });
+function goToSelection() {
+    document.getElementById("center").scrollIntoView({
+        behavior: "smooth"
+    });
 }
-function goToSelection1(){
-   document.getElementById("acceuil").scrollIntoView({
-     behavior: "smooth"
-   });
+function goToSelection1() {
+    document.getElementById("acceuil").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
 
@@ -53,7 +53,7 @@ function goToSelection1(){
 
     function startAutoPlay() {
         if (autoScrollInterval) clearInterval(autoScrollInterval);
-        autoScrollInterval = setInterval(nextSlide, 1000); // Changé à 3 secondes
+        autoScrollInterval = setInterval(nextSlide, 1000);
     }
 
     function stopAutoPlay() {
@@ -484,3 +484,213 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Tous les produits ont été chargés dynamiquement !");
 });
 
+
+// ============================================
+// SIDEBAR CARROUSEL (sidebar-nav)
+// ============================================
+
+(function initSidebarCarousel() {
+    // 1. Liste des images pour le carrousel (remplacez par vos vraies images)
+    const galleryImages = [
+        { src: "img/image 5.png", alt: "Produit 1" },
+        { src: "img/image 6.png", alt: "Produit 2" },
+        { src: "img/image 8.png", alt: "Produit 3" },
+        { src: "img/image 22.png", alt: "Produit 4" },
+        { src: "img/image 23.png", alt: "Produit 5" },
+        { src: "img/image 24.png", alt: "Produit 6" },
+        { src: "img/image 25.png", alt: "Produit 7" },
+        { src: "img/image 21.png", alt: "Produit 8" },
+        { src: "img/image 20.png", alt: "Produit 9" },
+    ];
+
+    const galleryContainer = document.querySelector('.sidebar-gallery-plus');
+    const prevBtn = document.querySelector('.sidebar-nav__btn:first-child');
+    const nextBtn = document.querySelector('.sidebar-nav__btn:last-child');
+
+    if (!galleryContainer || !prevBtn || !nextBtn) {
+        console.warn('Sidebar carousel elements not found');
+        return;
+    }
+
+    // 2. Générer les miniatures
+    function buildGallery() {
+        galleryContainer.innerHTML = '';
+
+        galleryImages.forEach((img, index) => {
+            const item = document.createElement('div');
+            item.className = 'carousel-item';
+            item.setAttribute('data-index', index);
+
+            const image = document.createElement('img');
+            image.src = img.src;
+            image.alt = img.alt;
+
+            item.appendChild(image);
+            galleryContainer.appendChild(item);
+        });
+    }
+
+    // 3. Fonction de défilement
+    function scrollGallery(direction) {
+        const items = document.querySelectorAll('.carousel-item');
+        if (items.length === 0) return;
+
+        // Calculer la largeur d'un élément + la marge
+        const itemWidth = items[0].offsetWidth;
+        const computedStyle = window.getComputedStyle(galleryContainer);
+        const gap = parseInt(computedStyle.gap) || 16;
+        const scrollAmount = itemWidth + gap;
+
+        const currentScroll = galleryContainer.scrollLeft;
+        let newScroll;
+
+        if (direction === 'next') {
+            newScroll = currentScroll + scrollAmount;
+        } else {
+            newScroll = currentScroll - scrollAmount;
+        }
+
+        galleryContainer.scrollTo({
+            left: newScroll,
+            behavior: 'smooth'
+        });
+    }
+
+    // 4. Événements des boutons
+    prevBtn.addEventListener('click', () => scrollGallery('prev'));
+    nextBtn.addEventListener('click', () => scrollGallery('next'));
+
+    // 5. Optionnel : clic sur une image pour l'afficher en grand
+    function handleImageClick() {
+        const items = document.querySelectorAll('.carousel-item');
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                // Retirer la classe active de tous
+                items.forEach(i => i.classList.remove('active'));
+                // Ajouter la classe active sur l'élément cliqué
+                item.classList.add('active');
+                console.log(`Image sélectionnée : ${item.getAttribute('data-index')}`);
+            });
+        });
+    }
+
+    // 6. Initialisation
+    buildGallery();
+
+    // Observer l'ajout des éléments pour attacher les événements
+    const observer = new MutationObserver(() => {
+        handleImageClick();
+    });
+    observer.observe(galleryContainer, { childList: true });
+
+    handleImageClick();
+
+    console.log('Sidebar carousel initialized');
+})();
+
+
+// ============================================
+// SIDEBAR GALLERY - Smart Animation 400ms
+// ============================================
+
+(function initSidebarGallery() {
+    // Images de la galerie
+    const galleryImages = [
+        { src: "img/12.png", alt: "Gallery 1" },
+        { src: "img/11.png", alt: "Gallery 2" },
+        { src: "img/14.png", alt: "Gallery 3" },
+        { src: "img/15.png", alt: "Gallery 4" },
+        { src: "img/11.png", alt: "Gallery 5" },
+        { src: "img/16.png", alt: "Gallery 6" },
+        { src: "img/17.png", alt: "Gallery 7" }
+    ];
+
+    const galleryContainer = document.querySelector('.sidebar-gallery');
+    if (!galleryContainer) {
+        console.warn('Sidebar gallery container not found');
+        return;
+    }
+
+    // Style du conteneur
+    galleryContainer.style.cssText = `
+        position: relative;
+        width: 280px;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 10px;
+    `;
+
+    // Créer le track pour l'animation
+    const track = document.createElement('div');
+    track.className = 'gallery-track';
+    track.style.cssText = `
+        display: flex;
+        width: 250px;
+        height: 280px;
+        transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+    `;
+    galleryContainer.appendChild(track);
+
+    // Créer les slides
+    galleryImages.forEach((img, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'gallery-slide';
+        slide.style.cssText = `
+            flex: 0 0 100%;
+            height: 100%;
+        `;
+
+        const image = document.createElement('img');
+        image.src = img.src;
+        image.alt = img.alt;
+        image.style.cssText = `
+            width: 250px;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 400ms ease;
+        `;
+
+        slide.appendChild(image);
+        track.appendChild(slide);
+    });
+
+    // Animation smart : changement d'image automatique en boucle
+    let currentIndex = 0;
+    const totalSlides = galleryImages.length;
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        const translateX = -currentIndex * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+
+        // Effet smart : zoom léger sur l'image active
+        const slides = document.querySelectorAll('.gallery-slide img');
+        slides.forEach((img, i) => {
+            if (i === currentIndex) {
+                img.style.transform = 'scale(1)';
+            } else {
+                img.style.transform = 'scale(0.95)';
+            }
+        });
+    }
+
+
+    setInterval(nextSlide, 1000);
+
+    // Animation au survol : pause
+    let intervalId = setInterval(nextSlide, 1000);
+
+    galleryContainer.addEventListener('mouseenter', () => {
+        clearInterval(intervalId);
+    });
+
+    galleryContainer.addEventListener('mouseleave', () => {
+        intervalId = setInterval(nextSlide, 1000);
+    });
+
+    // Initialisation
+    nextSlide();
+
+    console.log('Sidebar gallery initialized with smart animation 400ms');
+})();

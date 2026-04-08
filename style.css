@@ -408,6 +408,20 @@ body {
   padding: 0 15px;
   cursor: pointer;
 }
+.sidebar-gallery-plus{
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 350px;
+  height: 380px;
+}
+.sidebar-gallery{
+   position: absolute;
+  top: 730px;
+  left: 70px;
+  width: 280px;
+  height: 300px;
+}
 
 .sidebar-btn span {
   font-family: 'Inknut Antiqua-Regular', Helvetica;
@@ -442,7 +456,7 @@ body {
 
 .sidebar-nav__btn {
   position: absolute;
-  left: 172px;
+  left: 165px;
   background: none;
   border: none;
   cursor: pointer;
@@ -459,6 +473,156 @@ body {
 .sidebar-nav__btn img {
   width: 90px;
   height: auto;
+}
+
+/* Sidebar Carrousel Styles */
+.sidebar-gallery-plus {
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    width: 350px;
+    height: 380px;
+    border-radius: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    display: flex;
+    gap: 16px;
+    padding: 15px;
+    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-y pinch-zoom;
+}
+
+/* Style du scrollbar */
+.sidebar-gallery-plus::-webkit-scrollbar {
+    height: 6px;
+}
+
+.sidebar-gallery-plus::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 4px;
+}
+
+.sidebar-gallery-plus::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+/* Éléments du carrousel */
+.carousel-item {
+    display: inline-block;
+    width: 345px;
+    height: 375px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.carousel-item img {
+    width: 280px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-item.active {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(199,187,148,0.4);
+}
+
+/* Ajustement des boutons de navigation */
+.sidebar-nav__btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.sidebar-nav__btn:first-child {
+    top: -20px;
+}
+
+.sidebar-nav__btn:last-child {
+    bottom: -20px;
+    top: auto;
+}
+
+.sidebar-nav__btn:hover {
+    background: var(--gold);
+    transform: translateX(-50%) scale(1.1);
+}
+
+.sidebar-nav__btn img {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* Sidebar Gallery - Smart Animation 400ms */
+.sidebar-gallery {
+    position: absolute;
+    top: 730px;
+    left: 110px;
+    gap: 50px;
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    width: 350px;
+    height: 350px;
+    transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.gallery-slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Animation smart - zoom subtil sur l'image active */
+.gallery-slide img {
+    transform: scale(0.98);
+}
+
+/* Effet de fondu au changement */
+@keyframes gentleFade {
+    0% { opacity: 0.95; }
+    100% { opacity: 1; }
+}
+
+.gallery-slide {
+    animation: gentleFade 400ms ease-out;
 }
 
 /* Contact Section */
