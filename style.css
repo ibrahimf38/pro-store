@@ -44,6 +44,9 @@ body {
   font-family: 'Kawaii Bubble', Helvetica, sans-serif;
   overflow-x: hidden;
 }
+.product-subtitle-com{
+ font-family: 'Inknut Antiqua-Regular', Helvetica;
+}
 
 .page {
   background: #fff;
@@ -98,23 +101,20 @@ body {
 
 .nav-btn:hover {
   opacity: 0.8;
-  box-shadow: 0px 4px 4px #b99031;
-  background-color: #c2b088;
-}
-
-.nav-btn:hover .nav-btn__text {
-  text-shadow: 0px 0px 5px #b99031;
-  color: #9e720d;
-}
-.nav-btn:hover .nav-btn__icon {
-  filter: invert(27%) sepia(96%) saturate(748%) hue-rotate(15deg) brightness(95%) contrast(101%);
+  box-shadow: 0px 4px 8px #eea107; 
+  background-color: #e2c88c;
 }
 
 .nav-btn__text {
   font-family: 'Inknut Antiqua-Regular', Helvetica;
   font-weight: 700;
   color: var(--gold);
-  font-size: 16px;
+  font-size: 18px;
+}
+.nav-btn:hover .nav-btn__text {
+  color: #eea107; 
+  text-shadow: 0px 0px 2px rgba(255,255,255,0.8); 
+  
 }
 
 .nav-btn__icon {
@@ -125,19 +125,22 @@ body {
 /* Hero Section */
 .hero {
   margin-top: 167px;
-  width: 100%;
-  max-width: 1515px;
-  margin-left: auto;
-  margin-right: auto;
+  width:1515px;
+  
 }
 
 .hero-carousel {
   display: flex;
   gap: 40px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-y pinch-zoom;
 }
-
+.hero-carousel::-webkit-scrollbar {
+  display: none;
+}
 .hero-slide {
   min-width: 100%;
   height: 609px;
@@ -168,15 +171,29 @@ body {
   margin-top: 80px;
   width: 604px;
 }
+.slide-1{
+ background-color: #E6ECF8;
+}
+.slide-2{
+  background-color: #C7BB94;
+}
+.slide-3{
+  background-color: #CBB7E6;
+}
+.slide-4{
+  background-color: #C8E8E0;
+}
 
 .cart-btn {
+  position: absolute;
   width: 224px;
   height: 69px;
   background: #fff;
   border: 6px solid transparent;
   border-image: var(--border-gold) 1;
   box-shadow: 5px 1px 5px #755d2a;
-  margin-top: 80px;
+  margin-top: 380px;
+  margin-left: 90px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -300,7 +317,6 @@ body {
 .product-price span {
   color: #000000cc;
 }
-
 /* Scroll Containers */
 .shop-section {
   background: #b990311a;
@@ -465,11 +481,13 @@ body {
 .contact-map {
   position: absolute;
   top: 75px;
-  left: 1px;
+  left: 30px;
   width: 1383px;
   height: 348px;
   object-fit: cover;
 }
+
+
 
 .social-icons {
   position: absolute;
@@ -494,6 +512,7 @@ body {
   width: 60px;
   height: auto;
 }
+
 
 /* Footer */
 .footer {

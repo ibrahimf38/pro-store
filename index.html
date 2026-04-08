@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <script src="script.js" defer></script>
   <div class="page">
     <!-- Navigation -->
     <nav class="nav">
@@ -30,18 +31,44 @@
 
     <!-- Section Accueil (Carrousel) -->
     <section class="hero">
-      <div class="hero-carousel">
-        <div class="hero-slide">
+       
+      <div class="hero-carousel" id="heroCarousel">
+        <div class="hero-slide slide-1">
           <div class="hero-content">
             <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
             <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
-            <button class="cart-btn">
-              <img src="img/add shopping cart 2.png" alt="Ajouter au panier">
-            </button>
           </div>
           <img class="hero-image" src="img/image 5.png" alt="Produit">
         </div>
-        <!-- Autres slides identiques -->
+
+         <div class="hero-slide slide-2" >
+          <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
+            <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
+          </div>
+          <img class="hero-image" src="img/image 6.png" alt="Produit">
+        </div>
+
+         <div class="hero-slide slide-3">
+          <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
+            <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
+          </div>
+          <img class="hero-image" src="img/image 7.png" alt="Produit">
+        </div>
+
+         <div class="hero-slide slide-4">
+          <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
+            <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
+          </div>
+          <img class="hero-image" src="img/image 8.png" alt="Produit">
+        </div>
+
+         <button class="cart-btn">
+              <img src="img/add shopping cart 2.png" alt="Ajouter au panier">
+            </button>
+        
       </div>
     </section>
 
@@ -49,54 +76,26 @@
     <section class="shop">
       <h1 class="shop-title">Boutique</h1>
       
-      <!-- Version mobile/iphone -->
       <div class="shop-section shop-section--phone">
-        <h3 class="shop-section__title">Decouvrez nos disponibilité</h3>
-        <div class="product-scroll">
-          <!-- Produit 1 -->
-          <div class="product-card">
-            <span class="product-badge">Authenthique</span>
-            <img class="product-card__img" src="img/11.png" alt="Produit">
-            <img class="product-fav" src="img/ellipse 6.png" alt="Favoris">
-            <h4 class="product-title">Lorem Ipsum is simply</h4>
-            <p class="product-subtitle">Lorem Ipsum</p>
-            <p class="product-price"><strong>600 mil</strong> <span>Fcfa</span></p>
-          </div>
-          <!-- Plus de produits... -->
-        </div>
-      </div>
-
-      <!-- Version tablette -->
-      <div class="shop-section shop-section--tablet">
-        <div class="product-scroll">
-            <div class="product-card product-card--small">
-            <span class="product-badge">Authenthique</span>
-            <img class="product-card__img" src="img/image 12.png" alt="Produit">
-            <img class="product-fav" src="img/ellipse 6.png" alt="Favoris">
-            <h4 class="product-title">Lorem Ipsum is simply</h4>
-            <p class="product-subtitle">Lorem Ipsum</p>
-            <p class="product-price"><strong>320 mil</strong> <span>Fcfa</span></p>
-          </div>
-          
-          <!-- Plus de produits... -->
-        </div>
-      </div>
-
-      <!-- Version desktop -->
-      <div class="shop-section shop-section--desktop">
-        <div class="product-scroll">
-          <div class="product-card product-card--large">
-            <span class="product-badge">Authenthique</span>
-            <img class="product-card__img" src="img/image 17.png" alt="Produit">
-            <img class="product-fav" src="img/ellipse 6.png" alt="Favoris">
-            <h4 class="product-title">Lorem Ipsum is simply</h4>
-            <p class="product-subtitle">Lorem Ipsum</p>
-            <p class="product-price"><strong>950 mil</strong> <span>Fcfa</span></p>
-          </div>
-          <!-- Plus de produits... -->
-        </div>
-      </div>
-
+         <h3 class="shop-section__title">Decouvrez nos disponibilité</h3>
+         <div class="product-scroll">
+           <!-- Les produits seront générés dynamiquement ici -->
+         </div>
+       </div>
+    
+       <!-- Version tablette -->
+       <div class="shop-section shop-section--tablet">
+         <div class="product-scroll">
+           <!-- Les produits seront générés dynamiquement ici -->
+         </div>
+       </div>
+    
+       <!-- Version desktop -->
+       <div class="shop-section shop-section--desktop">
+         <div class="product-scroll">
+           <!-- Les produits seront générés dynamiquement ici -->
+         </div>
+       </div>
       <!-- Sidebar -->
       <aside class="sidebar">
         <div class="sidebar-btn sidebar-btn--view">
@@ -114,6 +113,13 @@
           <button class="sidebar-nav__btn">
             <img src="img/Chevron Down.png" alt="Précédent">
           </button>
+             <!-- <img class="image-11" src="img/image 23.png" />
+              <img class="image-12" src="img/image 8.png" />
+              <img class="image-13" src="img/image 22.png" />
+              <img class="image-14" src="img/image 21.png" />
+              <img class="image-15" src="img/image 24.png" />
+              <img class="image-16" src="img/image 25.png" />
+              <img class="image-17" src="img/image 20.png" /> -->
           <button class="sidebar-nav__btn">
             <img src="img/Chevron Down 2.png" alt="Suivant">
           </button>
@@ -125,7 +131,9 @@
     <!-- Section Contact -->
     <section class="contact">
       <h2 class="contact-title">Contactez nous</h2>
-      <img class="contact-map" src="img/localisationimg.png" alt="Localisation">
+      <div class="contact-map">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.3547667981334!2d-8.03901452516477!3d12.62471588765968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe51cc703a8671bb%3A0x75b0d6eae22b1c5b!2sJXF7%2BVC7%2C%20Bamako!5e0!3m2!1sfr!2sml!4v1775603882637!5m2!1sfr!2sml" width="1375" height="350" style="border:50;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
       <div class="social-icons">
         <a href="#" class="social-icon"><img src="img/WhaIcon.png" alt="WhatsApp"></a>
         <a href="#" class="social-icon"><img src="img/IstaIcon.png" alt="Instagram"></a>
