@@ -1,6 +1,22 @@
-<<<<<<< HEAD
 
-=======
+function scrollToBottom(){
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    })
+}
+function goToSelection(){
+   document.getElementById("center").scrollIntoView({
+     behavior: "smooth"
+   });
+}
+function goToSelection1(){
+   document.getElementById("acceuil").scrollIntoView({
+     behavior: "smooth"
+   });
+}
+
+
 (function () {
     const carousel = document.getElementById('heroCarousel');
     const slides = Array.from(document.querySelectorAll('.hero-slide'));
@@ -467,4 +483,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeAllSections();
     console.log("Tous les produits ont été chargés dynamiquement !");
 });
->>>>>>> 7e8bb03ed4a3d53ac32f01107e123119e3e2c040
+

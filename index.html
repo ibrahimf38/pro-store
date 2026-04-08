@@ -9,20 +9,20 @@
 </head>
 <body>
    <script src="script.js" defer></script>
-  <div class="page">
+  <div class="page" id="acceuil">
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" >
       <img class="logo" src="img/logo.png" alt="ProStore Logo">
       <div class="nav-buttons">
-        <button class="nav-btn nav-btn--active">
+        <button class="nav-btn nav-btn--active" onclick="goToSelection1()">
           <span class="nav-btn__text">Acceuil</span>
           <img class="nav-btn__icon" src="img/home.png" alt="Accueil">
         </button>
-        <button class="nav-btn">
+        <button class="nav-btn" onclick="goToSelection()">
           <span class="nav-btn__text">Boutique</span>
           <img class="nav-btn__icon" src="img/add shopping cart.png" alt="Boutique">
         </button>
-        <button class="nav-btn">
+        <button class="nav-btn" onclick="scrollToBottom()">
           <span class="nav-btn__text">Contact</span>
           <img class="nav-btn__icon" src="img/call.png" alt="Contact">
         </button>
@@ -65,7 +65,7 @@
           <img class="hero-image" src="img/image 8.png" alt="Produit">
         </div>
 
-         <button class="cart-btn">
+         <button class="cart-btn" onclick="goToSelection()"">
               <img src="img/add shopping cart 2.png" alt="Ajouter au panier">
             </button>
         
@@ -73,7 +73,7 @@
     </section>
 
     <!-- Section Boutique -->
-    <section class="shop">
+    <section class="shop" id="center">
       <h1 class="shop-title">Boutique</h1>
       
       <div class="shop-section shop-section--phone">
