@@ -1,23 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro-Store</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProStore - Boutique en ligne</title>
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
+   <script src="script.js" defer></script>
+  <div class="page" id="acceuil">
+    <!-- Navigation -->
+    <nav class="nav" >
+      <img class="logo" src="img/logo.png" alt="ProStore Logo">
+      <div class="nav-buttons">
+        <button class="nav-btn nav-btn--active" onclick="goToSelection1()">
+          <span class="nav-btn__text">Acceuil</span>
+          <img class="nav-btn__icon" src="img/home.png" alt="Accueil">
+        </button>
+        <button class="nav-btn" onclick="goToSelection()">
+          <span class="nav-btn__text">Boutique</span>
+          <img class="nav-btn__icon" src="img/add shopping cart.png" alt="Boutique">
+        </button>
+        <button class="nav-btn" onclick="scrollToBottom()">
+          <span class="nav-btn__text">Contact</span>
+          <img class="nav-btn__icon" src="img/call.png" alt="Contact">
+        </button>
+      </div>
+    </nav>
 
-        </nav>
-    </header>
-    <main>
+    <!-- Section Accueil (Carrousel) -->
+    <section class="hero">
+       
+      <div class="hero-carousel" id="heroCarousel">
+        <div class="hero-slide slide-1">
+          <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
+            <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
+          </div>
+          <img class="hero-image" src="img/image 5.png" alt="Produit">
+        </div>
 
-    </main>
-    <footer>
+         <div class="hero-slide slide-2" >
+          <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
+            <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
+          </div>
+          <img class="hero-image" src="img/image 6.png" alt="Produit">
+        </div>
+
+         <div class="hero-slide slide-3">
+          <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
+            <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
+          </div>
+          <img class="hero-image" src="img/image 7.png" alt="Produit">
+        </div>
+
+         <div class="hero-slide slide-4">
+          <div class="hero-content">
+            <h2 class="hero-title">Lorem Ipsum is simply dummy tex</h2>
+            <p class="hero-subtitle">Lorem Ipsum is simply dummy tex</p>
+          </div>
+          <img class="hero-image" src="img/image 8.png" alt="Produit">
+        </div>
+
+         <button class="cart-btn" onclick="goToSelection()"">
+              <img src="img/add shopping cart 2.png" alt="Ajouter au panier">
+            </button>
         
+      </div>
+    </section>
+
+    <!-- Section Boutique -->
+    <section class="shop" id="center">
+      <h1 class="shop-title">Boutique</h1>
+      
+      <div class="shop-section shop-section--phone">
+         <h3 class="shop-section__title">Decouvrez nos disponibilité</h3>
+         <div class="product-scroll">
+           <!-- Les produits seront générés dynamiquement ici -->
+         </div>
+       </div>
+    
+       <!-- Version tablette -->
+       <div class="shop-section shop-section--tablet">
+         <div class="product-scroll">
+           <!-- Les produits seront générés dynamiquement ici -->
+         </div>
+       </div>
+    
+       <!-- Version desktop -->
+       <div class="shop-section shop-section--desktop">
+         <div class="product-scroll">
+           <!-- Les produits seront générés dynamiquement ici -->
+         </div>
+       </div>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-btn sidebar-btn--view">
+          <span>Voir plus</span>
+          <img src="img/Up 2.png" alt="Voir plus">
+        </div>
+        <div class="sidebar-nav">
+          <button class="sidebar-nav__btn">
+            <img src="img/Chevron Down.png" alt="Précédent">
+          </button>
+             <div class="sidebar-gallery-plus">
+          <!-- Galerie d'images -->
+             </div>
+          <button class="sidebar-nav__btn">
+            <img src="img/Chevron Down 2.png" alt="Suivant">
+          </button>  
+        </div>
+
+        <div class="arrivage">
+          <div class="sidebar-btn sidebar-btn--new">
+          <span>Nouvelle arrivage</span>
+          <img src="img/New.png" alt="Nouveau">
+        </div>
+        <div class="sidebar-gallery">
+          <!-- Galerie d'images -->
+        </div>
+        </div>
+       
+        
+        <img class="sidebar-star" src="img/star.png" alt="Star">
+      </aside>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact">
+      <h2 class="contact-title">Contactez nous</h2>
+      <div class="contact-map">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.3547667981334!2d-8.03901452516477!3d12.62471588765968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe51cc703a8671bb%3A0x75b0d6eae22b1c5b!2sJXF7%2BVC7%2C%20Bamako!5e0!3m2!1sfr!2sml!4v1775603882637!5m2!1sfr!2sml" width="1275px" height="350px" style="border:30px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><img src="img/WhaIcon.png" alt="WhatsApp"></a>
+        <a href="#" class="social-icon"><img src="img/IstaIcon.png" alt="Instagram"></a>
+        <a href="#" class="social-icon"><img src="img/TikIcon.png" alt="TikTok"></a>
+        <a href="#" class="social-icon"><img src="img/TeleIcon.png" alt="Telegram"></a>
+        <a href="#" class="social-icon"><img src="img/EmaIcon.png" alt="Email"></a>
+        <a href="#" class="social-icon"><img src="img/ConIcon.png" alt="Contact"></a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <img class="footer-logo" src="img/image 4.png" alt="ProStore">
+      <p class="footer-email">@prostore.com/prostore.ml/tiktokprostore.com</p>
     </footer>
+  </div>
 </body>
 </html>
